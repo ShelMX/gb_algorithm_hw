@@ -11,6 +11,10 @@ __author__ = 'Шелест Леонид Викторович'
 
 
 def simple_calc(data: list) -> str:
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 95f0dad543214c2224d4b7705864c5362917a24c
     if data[0] == '+':
         result = data[1] + data[2]
     
@@ -42,6 +46,7 @@ def get_data() -> list or None:
                     print('P.S. На 0 делить низя!')
                 else:
                     flag = False
+    
     return [operation, int(a), int(b)]
 
 
@@ -51,6 +56,10 @@ def main():
         result = simple_calc(data=data)
         print(result)
 
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 95f0dad543214c2224d4b7705864c5362917a24c
 if __name__ == '__main__':
     main()
