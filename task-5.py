@@ -14,7 +14,7 @@ def main() -> list:
     for s in range(i, n+1):
         temp.append((s, chr(s)))
         j += 1
-        if j < 9:
+        if j < 10:
             continue
         else:
             print(temp)

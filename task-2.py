@@ -11,7 +11,7 @@ def get_data() -> list:
 
         result = input('Введи любое натуральное число и нажми интер ')
         check = result
-        if int(float(check)) != float(check):
+        if not float(check) // 1:
             continue
 
         return list(map(int, result))
@@ -19,17 +19,17 @@ def get_data() -> list:
 
 def analize_data(data: list) -> str:
 
-    n_1 = 0
-    n_2 = 0
+    count_odd = 0
+    count_even = 0
     for i in data:
         if i//2:
-            n_1 += 1
+            count_odd += 1
         else:
-            n_2 += 1
+            count_even += 1
 
     return f"В числе {''.join(map(str, data))} " \
-           f"\nчётных цифр - {n_2}, " \
-           f"\nнечётных цифр - {n_1}"
+           f"\nчётных цифр - {count_even}, " \
+           f"\nнечётных цифр - {count_odd}"
 
 
 def main():

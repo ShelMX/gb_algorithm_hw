@@ -16,8 +16,7 @@ def get_answer(data: str) -> str:
     num = ''
 
     for numb in data:
-        temp = list(map(int, numb))
-        temp_sum = sum(temp)
+        temp_sum = sum(list(map(int, numb)))
         if temp_sum > max_:
             max_ = temp_sum
             num = numb

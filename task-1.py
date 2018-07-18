@@ -11,19 +11,22 @@ __author__ = 'Шелест Леонид Викторович'
 
 
 def simple_calc(data: list) -> str:
-    result = 0
     if data[0] == '+':
         result = data[1] + data[2]
+    
     elif data[0] == '-':
         result = data[1] - data[2]
+    
     elif data[0] == '*':
         result = data[1] * data[2]
+    
     else:
         result = data[1] / data[2]
+    
     return f"{data[1]} {data[0] if data[2] > 0 else '-'} {abs(data[2])} = {result}"
 
 def get_data() -> list or None:
-    check = ('0', '+', '-', '*', '/')
+    check = ['0', '+', '-', '*', '/']
     flag = True
     while flag:
         operation = input("Выбери операцию (+, -, /, *) и введи этот знак.\nЕсли хочешь завершить программу введи 0. ")
@@ -47,6 +50,7 @@ def main():
     if data:
         result = simple_calc(data=data)
         print(result)
+
 
 if __name__ == '__main__':
     main()
