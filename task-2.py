@@ -11,7 +11,7 @@ def get_data() -> list:
 
         result = input('Введи любое натуральное число и нажми интер ')
         check = result
-        if not float(check) // 1:
+        if float(check) % 1:
             continue
 
         return list(map(int, result))
