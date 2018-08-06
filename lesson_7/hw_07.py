@@ -5,7 +5,7 @@ Module with the functions that are used in each homework.
 import random as rnd
 
 
-def generate_int_array(low: int=-100, up: int=99, size: int=100) -> list:
+def generate_int_array(low: int = -100, up: int = 99, size: int = 100) -> list:
     """
     function generate list of random numbers (int type).
     :param low: type int, lower bound of random numbers, included.
@@ -17,7 +17,7 @@ def generate_int_array(low: int=-100, up: int=99, size: int=100) -> list:
     return [rnd.randint(low, up) for _ in range(size)]
 
 
-def generate_float_array(low: float=0.0, up: float=50, size: int=100, rounding: int=None) -> list:
+def generate_float_array(low: float = 0.0, up: float = 50.0, size: int = 100, rounding: int = None) -> list:
     """
     function generate list of random numbers (float type).
     :param rounding: type int: if the value of the parameter is not specified,
@@ -43,10 +43,6 @@ def pretty_print(arr):
     :return: None
     """
 
-    k = 1
-    for i in arr:
-        if isinstance(i, int):
-            print(f"{i:>5}", end=' ' if k % 10 else '\n')
-        else:
-            print(f"{i:>10}", end=' ' if k % 10 else '\n')
-        k += 1
+    for count, i in enumerate(arr, 1):
+        print(f"{i:>5}" if isinstance(i, int) else f"{i:>10}",
+              end=' ' if count % 10 else '\n')

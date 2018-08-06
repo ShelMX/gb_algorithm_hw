@@ -13,6 +13,7 @@ def merge_sort(nsl: list) -> list:
     :param nsl: type list: non sorted list
     :return: type list: list after merge sort
     """
+
     sl = nsl[:]
     n = len(nsl)
     if n < 2:
@@ -45,22 +46,22 @@ def merge_sort(nsl: list) -> list:
         return sl
 
 
-def main(arr: list=None, print_: bool=True) -> list:
+def main(arr: list = None, is_print: bool = True) -> list:
     """
     main function that combines all the functions of the module.
-    :param print_: type bool: flag, if True, then function will print result, else not print.
-    :param mass: type list: non sorted list, if the value of the parameter is not specified,
-                            then an array of random numbers is created.
+    :param is_print: type bool: flag, if True, then function will print result, else not print.
+    :param arr: type list: non sorted list, if the value of the parameter is not specified,
+                           then an array of random numbers is created.
     :return: type list: sorted list
     """
 
-    non_sort_list = arr if arr else lib.generate_float_array(low=0, up=50, rounding=5)
+    non_sort_list = arr if arr else lib.generate_float_array(low=0.0, up=50.0, rounding=5)
     sorted_list = merge_sort(nsl=non_sort_list)
 
-    if print_:
-        print('Non sorted list:')
+    if is_print:
+        print(f"Non sorted list:")
         lib.pretty_print(arr=non_sort_list)
-        print('\nList after Bubble sort:')
+        print(f"\nList after Merge sort:")
         lib.pretty_print(arr=sorted_list)
 
     return sorted_list
